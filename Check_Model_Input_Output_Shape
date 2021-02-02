@@ -1,0 +1,3 @@
+model.load("terserah")
+model.inputs
+model.outputs
