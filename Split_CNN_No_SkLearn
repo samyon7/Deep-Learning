@@ -1,3 +1,9 @@
+import tensorflow as tf
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.25)
+
 train_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',  # Source directory
   target_size=(150, 150),  # Resizes images
