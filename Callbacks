@@ -1,0 +1,20 @@
+# First callbacks!
+class myCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs={}):
+    if(logs.get('accuracy') > 0.97):
+      print("\nAkurasi di atas 97%, hentikan training!")
+      self.model.stop_training = True
+
+callbacks = myCallback()
+
+history = model.fit(
+    train_generator,
+    steps_per_epoch = 41, # 1312 images = batch_size * steps
+    epochs = 20,
+    validation_data = validation_generator,
+    validation_steps = 27, # 876 images = batch_size * steps
+    verbose =2,
+      callbacks=[callbacks]
+)
+
+------------------------------------------------------------------------------------
