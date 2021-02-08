@@ -18,3 +18,8 @@ history = model.fit(
 )
 
 ------------------------------------------------------------------------------------
+
+# Second callbacks
+early_stop = EarlyStopping(monitor='val_loss', patience=3) #stops training if validation performance doesn't change after 3 epochs
+
+------------------------------------------------------------------------------------
