@@ -1,0 +1,16 @@
+# First model
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+ 
+tokenizer = Tokenizer(num_words=5000, oov_token='x')
+
+import tensorflow as tf
+model = tf.keras.Sequential([
+    tf.keras.layers.Embedding(input_dim=5000,output_dim=18),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.GlobalAveragePooling1D(),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(5, activation='softmax')
+])
+
+---------------------------------------------------------------------------------
