@@ -14,3 +14,19 @@ model = tf.keras.Sequential([
 ])
 
 ---------------------------------------------------------------------------------
+
+# Second model!
+import tensorflow as tf
+model = tf.keras.Sequential([
+    tf.keras.layers.Embedding(input_dim=5000,output_dim=18),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.GlobalAveragePooling1D(),
+    tf.keras.layers.Dense(32, activation='relu'),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dropout(0.4),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(5, activation='softmax')
+])
+
+---------------------------------------------------------------------------------
