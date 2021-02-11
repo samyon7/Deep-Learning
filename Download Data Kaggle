@@ -1,0 +1,6 @@
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+
+!kaggle datasets download -d lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
