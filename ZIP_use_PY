@@ -1,0 +1,4 @@
+import zipfile
+zip_ref = zipfile.ZipFile('imdb-dataset-of-50k-movie-reviews.zip', 'r')
+zip_ref.extractall('files')
+zip_ref.close()
