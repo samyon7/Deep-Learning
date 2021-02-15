@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.25) # 0.25 is standard between 0.3 and 0.2
+train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.1) # 0.25 is standard between 0.3 and 0.2
 
 train_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',  # Source directory
