@@ -14,7 +14,7 @@ history = model.fit(
     validation_data = validation_generator,
     validation_steps = 27, # 876 images = batch_size * steps
     verbose =2,
-      callbacks=[callbacks]
+    callbacks=[callbacks]
 )
 
 ------------------------------------------------------------------------------------
