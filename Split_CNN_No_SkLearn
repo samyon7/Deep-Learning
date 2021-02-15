@@ -7,12 +7,12 @@ train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.1) # 0.25 i
 train_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',  # Source directory
   target_size=(150, 150),  # Resizes images
-  batch_size=15,
+  batch_size=32,
   class_mode='categorical',subset = 'training')
     
 validation_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',
   target_size=(150, 150),
-  batch_size=15,
+  batch_size=32,
   class_mode='categorical',
   subset='validation')
