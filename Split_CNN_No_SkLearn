@@ -10,9 +10,6 @@ train_generator = train_datagen.flow_from_directory(
   batch_size=15,
   class_mode='categorical',subset = 'training')
     
-
-    epochs = 15
-    #Testing data
 validation_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',
   target_size=(150, 150),
