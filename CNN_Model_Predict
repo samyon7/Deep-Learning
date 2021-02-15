@@ -1,0 +1,12 @@
+from keras.preprocessing import image
+
+new_image = image.load_img('/content/a (2).jpeg', \
+                           target_size = (150, 150))
+new_image
+
+new_image = image.img_to_array(new_image)
+new_image = np.expand_dims(new_image, axis = 0)
+
+result = model.predict(new_image)
+result_final = np.argmax(result)
+result_final
