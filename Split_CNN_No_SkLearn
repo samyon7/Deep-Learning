@@ -4,15 +4,17 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.1) # 0.25 is standard between 0.3 and 0.2
 
+IMG_SIZE = 150
+
 train_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',  # Source directory
-  target_size=(150, 150),  # Resizes images
+  target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
   batch_size=32,
   class_mode='categorical',subset = 'training')
     
 validation_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',
-  target_size=(150, 150),
+  target_size=(IMG_SIZE,IMG_SIZE),
   batch_size=32,
   class_mode='categorical',
   subset='validation')
