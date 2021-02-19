@@ -1,0 +1,84 @@
+import tensorflow as tf
+import pandas as pd
+import numpy as np
+import os
+from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
+from tensorflow.keras.layers import Dense,GlobalAveragePooling2D,Dropout
+from tensorflow.keras.applications import VGG16
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.mobilenet import preprocess_input
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+
+---------------------------------------------------------------------------------------------------------
+
+base_model=VGG16(weights='imagenet',include_top=False)
+
+---------------------------------------------------------------------------------------------------------
+
+import tensorflow as tf
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+train_datagen =ImageDataGenerator(
+    preprocessing_function=preprocess_input,
+    rotation_range=40,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest', 
+    validation_split=0.1
+  ) 
+
+IMG_SIZE = 300
+
+train_generator = train_datagen.flow_from_directory(
+  '/content/temporary',  # Source directory
+  target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
+  batch_size=32,
+  class_mode='categorical',subset = 'training')
+    
+validation_generator = train_datagen.flow_from_directory(
+  '/content/temporary',
+  target_size=(IMG_SIZE,IMG_SIZE),
+  batch_size=32,
+  class_mode='categorical',
+  subset='validation')
+  
+---------------------------------------------------------------------------------------------------------
+
+CLASSES = 4 # Output class
+x = base_model.output
+x = GlobalAveragePooling2D(name='avg_pool')(x)
+x = Dropout(0.4)(x)
+predictions = Dense(CLASSES, activation='softmax')(x)
+model = Model(inputs=base_model.input, outputs=predictions)
+for layer in base_model.layers:
+    layer.trainable = False
+    
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+---------------------------------------------------------------------------------------------------------
+
+class myCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs={}):
+    if(logs.get('accuracy') > 0.95):
+      print("\nAccuracy better than 75%, stop training!")
+      self.model.stop_training = True
+
+callbacks = myCallback()
+
+---------------------------------------------------------------------------------------------------------
+
+history = model.fit(
+    train_generator,
+    epochs = 30,
+    validation_data = validation_generator,
+    callbacks=[callbacks]
+)
