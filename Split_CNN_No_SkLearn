@@ -2,7 +2,14 @@ import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-train_datagen =ImageDataGenerator(rescale=1./255, validation_split=0.1) # 0.25 is standard between 0.3 and 0.2
+train_datagen = ImageDataGenerator(
+    rescale = 1./255,
+    rotation_range = 20,
+    horizontal_flip = True,
+    shear_range = 0.2,
+    fill_mode = 'nearest',
+    validation_split=0.1 # 0.25 is standard between 0.3 and 0.2
+)
 
 IMG_SIZE = 150
 
