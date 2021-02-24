@@ -11,7 +11,7 @@ train_datagen = ImageDataGenerator(
     validation_split=0.1 # 0.25 is standard between 0.3 and 0.2
 )
 
-IMG_SIZE = 150
+IMG_SIZE = 300
 
 train_generator = train_datagen.flow_from_directory(
   '/kaggle/input/animal-image-datasetdog-cat-and-panda/animals/animals',  # Source directory
@@ -25,3 +25,6 @@ validation_generator = train_datagen.flow_from_directory(
   batch_size=32,
   class_mode='categorical',
   subset='validation')
+
+# Remember! For best result, need training untill get callbacks more than 0.9700 !
+# This isn't VGG16 or etc
