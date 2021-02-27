@@ -70,6 +70,11 @@ model.compile(optimizer='adam',
 
 ---------------------------------------------------------------------------------------------------------
 
+dot_img_file = 'example.png'
+tf.keras.utils.plot_model(model, to_file=dot_img_file, show_shapes=True)
+
+---------------------------------------------------------------------------------------------------------
+
 class myCallback(tf.keras.callbacks.Callback):
   def on_epoch_end(self, epoch, logs={}):
     if(logs.get('accuracy') > 0.95):
