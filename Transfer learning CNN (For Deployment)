@@ -41,10 +41,11 @@ train_datagen =ImageDataGenerator(
 IMG_SIZE = 300
 
 train_generator = train_datagen.flow_from_directory(
-  '/content/temporary',  # Source directory
+  '/content/temporary',             # Source directory
   target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
   batch_size=32,
-  class_mode='categorical',subset = 'training')
+  class_mode='categorical',
+  subset = 'training')
     
 validation_generator = train_datagen.flow_from_directory(
   '/content/temporary',
