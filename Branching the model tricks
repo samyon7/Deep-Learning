@@ -1,0 +1,12 @@
+# Follow this tricks!
+
+def base_model():
+    inputs = tf.keras.layers.Input(shape=(len(train.columns)))
+
+    x = tf.keras.layers.Dense(128, activation='relu')(inputs)
+    x = tf.keras.layers.Dense(64, activation='relu')(x)
+    outputs = tf.keras.layers.Dense(1, activation='sigmoid')(x)
+    model = tf.keras.Model(inputs=inputs, outputs=outputs)
+    return model
+
+model = base_model()
