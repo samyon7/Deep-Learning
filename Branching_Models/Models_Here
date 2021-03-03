@@ -48,4 +48,5 @@ x3 = tf.keras.layers.Dense(512, activation='relu')(x3)
 outputs = tf.keras.layers.Dense(1, activation='sigmoid')(x3)
 model = tf.keras.Model(inputs=inputs, outputs=outputs)
 
-###### Actually this model is good for binary classification and big. The term is using rmsprop, based the experiment when using to malaria dataset cell
+###### Actually this model is good for binary classification and big. The term is using rmsprop, based the experiment when using to malaria dataset cell and 
+###### 300 IMG_SIZE
