@@ -36,7 +36,7 @@ train_datagen =ImageDataGenerator(
     horizontal_flip=True,
     fill_mode='nearest', 
     validation_split=0.1
-  ) 
+)
 
 IMG_SIZE = 300
 
