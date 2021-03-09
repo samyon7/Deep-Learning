@@ -2,7 +2,7 @@ from keras.preprocessing import image
 import numpy as np
 
 new_image = image.load_img('/content/a (2).jpeg', \
-                           target_size = (150, 150))
+                           target_size = (IMG_SIZE,IMG_SIZE))
 new_image
 
 new_image = image.img_to_array(new_image)
