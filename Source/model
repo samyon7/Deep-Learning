@@ -1,0 +1,37 @@
+Here are three helpful classes you can check out to learn more:
+
+Intro to Deep Learning from MIT → http://goo.gle/3sPj8To​ 
+MIT Deep Learning and Artificial Intelligence Lectures → https://goo.gle/3qh7H54​ 
+Convolutional Neural Networks for Visual Recognition from Stanford → http://goo.gle/3bbC34I​
+
+And here are all the links to demos and code from the video, in the order they appeared:
+
+Face and hand tracking demos → http://goo.gle/2WTCwSc​ 
+Teachable machine demo → https://goo.gle/3bSCzCi​ 
+What features does a network see? → http://goo.gle/3e2zpA5​ 
+DeepDream tutorials → http://goo.gle/3bYIBTp​ and http://goo.gle/384B6JC​ 
+Hyperparameter tuning with Keras Tuner → http://goo.gle/2InBK7J​ 
+Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs → http://goo.gle/309pMY5​ 
+Linear (and deep) regression tutorial → http://goo.gle/3sKxkN7​ 
+Image classification with a CNN tutorial → http://goo.gle/3qdD2Wb​ 
+Audio recognition tutorial → http://goo.gle/3kFpl1j​ 
+Transfer learning tutorial → http://goo.gle/3bV7D60​ 
+RNN tutorial (sentiment analysis / text classification) → http://goo.gle/3bVM1X7​ 
+RNN tutorial (text generation with Shakespeare) → http://goo.gle/3qmnrnz​ 
+Timeseries forecasting tutorial (weather) → http://goo.gle/3ecdYg9​ 
+Sketch RNN demo (draw together with a neural network) → http://goo.gle/3bbHTTy​ 
+Machine translation tutorial (English to Spanish) → http://goo.gle/3e7IJme​ 
+Image captioning tutorial → http://goo.gle/3sKFNQz​ 
+Autoencoders and anomaly detection tutorial → http://goo.gle/30aD0UA​ 
+GANs tutorial (Pix2Pix) → http://goo.gle/3kI1ZrB​ 
+A Deep Learning Approach to Antibiotic Discovery → https://goo.gle/3e7ivQD​ 
+Integrated gradients tutorial → http://goo.gle/2PxfRtq​ and http://goo.gle/3sE0bmq​ 
+TensorFlow Playground demos → http://goo.gle/2Px6rhB​ 
+Introduction to gradients and automatic differentiation → http://goo.gle/3sFVybo​ 
+Basic image classification tutorial → http://goo.gle/3c2AF3o​ 
+Overfitting and underfitting tutorial → http://goo.gle/3cdA9Qv​ 
+Keras early stopping callback → http://goo.gle/308XQUj​ 
+Interactive autoencoders demo (anomaly detection) → http://goo.gle/3kPfW7q​ 
+Deep Learning with Python, Second Edition → http://goo.gle/3qcQ5Y5​ 
+Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition →  http://goo.gle/386DKP4​ 
+Deep Learning book → http://goo.gle/3c2VQmd
