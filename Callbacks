@@ -26,3 +26,5 @@ history = model.fit(
 early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3) #stops training if validation performance doesn't change after 3 epochs
 
 ------------------------------------------------------------------------------------
+
+# Use callbacks when val_accuracy no longer increasing, same with val_loss if no longer decreasing!
