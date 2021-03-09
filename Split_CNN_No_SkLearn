@@ -32,6 +32,7 @@ validation_generator = train_datagen.flow_from_directory(
 --------------------------------------------------------------------------------
 
 # Or like this can be good too!
+# In this trick, you can't use random fool model. You should use special model, or you will face overfitting
 
 datagen = ImageDataGenerator(
     rescale=1./255.,
