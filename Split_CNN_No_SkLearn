@@ -28,3 +28,34 @@ validation_generator = train_datagen.flow_from_directory(
 
 # Remember! For best result, need training untill get callbacks more than 0.9700 !
 # This isn't VGG16 or etc
+
+--------------------------------------------------------------------------------
+
+# Or like this can be good too!
+
+datagen = ImageDataGenerator(
+    rescale=1./255.,
+    horizontal_flip=True,
+    brightness_range=[0.4,1.5],
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    validation_split=0.1
+)
+
+IMG_SIZE = 300
+
+train_generator = datagen.flow_from_directory(
+    '/content/files',
+    batch_size=32,
+    class_mode='categorical',
+    target_size=(IMG_SIZE,IMG_SIZE),
+    color_mode='rgb',
+    subset='training'
+)
+validation_generator = datagen.flow_from_directory(
+    '/content/files',
+    batch_size=32,
+    class_mode='categorical',
+    target_size=(IMG_SIZE,IMG_SIZE),
+    subset='validation'
+)
