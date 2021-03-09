@@ -45,14 +45,16 @@ train_generator = train_datagen.flow_from_directory(
   target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
   batch_size=32,
   class_mode='categorical',         # Remember to change based the class
-  subset = 'training')
+  subset = 'training'
+)
     
 validation_generator = train_datagen.flow_from_directory(
   '/content/temporary',
   target_size=(IMG_SIZE,IMG_SIZE),
   batch_size=32,
   class_mode='categorical',
-  subset='validation')
+  subset='validation'
+)
   
 ---------------------------------------------------------------------------------------------------------
 
