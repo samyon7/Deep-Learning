@@ -21,7 +21,7 @@ from tensorflow.keras.optimizers import Adam
 base_model=VGG16(weights='imagenet',include_top=False)
 
 ---------------------------------------------------------------------------------------------------------
-
+########## You can use this
 import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -37,6 +37,20 @@ train_datagen =ImageDataGenerator(
     fill_mode='nearest', 
     validation_split=0.1
 )
+
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+########## You can use this too!
+import tensorflow as tf
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+    preprocessing_function=tf.keras.applications.vgg16.preprocess_input,
+    validation_split=0.2
+)
+
+---------------------------------------------------------------------------------------------------------
 
 IMG_SIZE = 300
 
