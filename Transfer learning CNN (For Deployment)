@@ -28,7 +28,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 train_datagen =ImageDataGenerator(
     preprocessing_function=preprocess_input,
-    rotation_range=40,
+    rotation_range=20,
     width_shift_range=0.2,
     height_shift_range=0.2,
     shear_range=0.2,
