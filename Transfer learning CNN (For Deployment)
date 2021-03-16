@@ -27,7 +27,7 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 train_datagen =ImageDataGenerator(
-    preprocessing_function=preprocess_input,
+    preprocessing_function=preprocess_input, # Use this preprocess input for transfer learning!
     rotation_range=20,
     width_shift_range=0.2,
     height_shift_range=0.2,
