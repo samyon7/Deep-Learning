@@ -160,7 +160,7 @@ validation_generator = train_datagen.flow_from_directory(
   batch_size=32,
   class_mode='categorical',
   subset='validation',
-  shuffle=False
+  shuffle=False             # Use this shuffle for second training to get more good accuracy. This shuffle just able only for validation set!
 )
 
 from sklearn.metrics import classification_report, confusion_matrix
