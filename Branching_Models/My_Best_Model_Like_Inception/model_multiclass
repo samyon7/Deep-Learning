@@ -60,7 +60,7 @@ x = tf.keras.layers.Activation('elu')(x)
 
 x3 = tf.keras.layers.Flatten()(x)
 x3 = tf.keras.layers.Dropout(0.5)(x3)
-x3 = tf.keras.layers.Dense(512, activation='relu')(x3)
+x3 = tf.keras.layers.Dense(512, activation='relu')(x3) # Start with relu, end with relu. In the middle, better you fill in with elu.
 
 outputs = tf.keras.layers.Dense(4, activation='softmax')(x3)
 model = tf.keras.Model(inputs=inputs, outputs=outputs)
