@@ -141,8 +141,24 @@ print("test loss, test acc:", results)
 model.save("Model_Name.h5")
 
 ---------------------------------------------------------------------------------------------------------
+# If there is no selu activation
 
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+with open('model.tflite', 'wb') as f:
+    f.write(tflite_model)
+    
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+# If use the selu activation
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+
+converter.target_spec.supported_ops = [
+  tf.lite.OpsSet.TFLITE_BUILTINS, 
+  tf.lite.OpsSet.SELECT_TF_OPS 
+]
+
 tflite_model = converter.convert()
 with open('model.tflite', 'wb') as f:
     f.write(tflite_model)
