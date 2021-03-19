@@ -131,7 +131,14 @@ plt.show()
 
 ---------------------------------------------------------------------------------------------------------
 
-results = model.evaluate(validation_generator)
+akurasi_test_generator = train_datagen.flow_from_directory(
+  '/content/TMP',
+  target_size=(IMG_SIZE,IMG_SIZE),
+  batch_size=32,
+  class_mode='categorical',
+)
+
+results = model.evaluate(akurasi_test_generator)
 print("test loss, test acc:", results)
 
 ---------------------------------------------------------------------------------------------------------
@@ -170,7 +177,7 @@ target_names = []
 for key in train_generator.class_indices:
     target_names.append(key)
 
-validation_generator = train_datagen.flow_from_directory(
+testing_generator = train_datagen.flow_from_directory(
   '/content/Temporary',
   target_size=(IMG_SIZE,IMG_SIZE),
   batch_size=32,
@@ -183,10 +190,10 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 #Confution Matrix and Classification Report
 
-validation_generator.reset()
-Y_predi = model.predict_generator(validation_generator, total_image_validation //batches+1)
+testing_generator.reset()
+Y_predi = model.predict_generator(testing_generator, total_image_validation //batches+1)
 y_predi = np.argmax(Y_predi, axis=1)
 print('Confusion Matrix')
-print(confusion_matrix(validation_generator.classes, y_predi))
+print(confusion_matrix(testing_generator.classes, y_predi))
 print('Classification Report')
-print(classification_report(validation_generator.classes, y_predi, target_names=target_names))
+print(classification_report(testing_generator.classes, y_predi, target_names=target_names))
