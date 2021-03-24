@@ -1,6 +1,7 @@
 """
 This is good for deployment, not for research.
 Another than this is just for research
+If you wanna goog model, first do transfer learning, after that you do a regular research model, to warm up GPU model
 """
 import tensorflow as tf
 import pandas as pd
