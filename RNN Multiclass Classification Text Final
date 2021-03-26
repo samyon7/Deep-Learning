@@ -14,7 +14,11 @@ import os
 -------------------------------------------------------------------------------------------------------
 
 # Just use 2 column, the object, and the classes
+# This is the valid, structure is that left column is the object, and the right is the classes
 df = pd.read_csv('/content/TMP_3/uci-news-aggregator.csv', usecols=['TITLE', 'CATEGORY'])
+
+# This's how to replace the column! U should use this if the dataframe isn't same with the structure before!
+df=df[['CATEGORY','TITLE']]
 
 -------------------------------------------------------------------------------------------------------
 
