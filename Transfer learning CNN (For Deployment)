@@ -209,3 +209,19 @@ print('Confusion Matrix')
 print(confusion_matrix(testing_generator.classes, y_predi))
 print('Classification Report')
 print(classification_report(testing_generator.classes, y_predi, target_names=target_names))
+
+---------------------------------------------------------------------------------------------------------
+
+from keras.preprocessing import image
+import numpy as np
+
+new_image = image.load_img('/content/a (2).jpeg', \
+                           target_size = (IMG_SIZE,IMG_SIZE))
+new_image
+
+new_image = image.img_to_array(new_image)
+new_image = np.expand_dims(new_image, axis = 0)
+
+result = model.predict(new_image)
+result_final = np.argmax(result)
+result_final
