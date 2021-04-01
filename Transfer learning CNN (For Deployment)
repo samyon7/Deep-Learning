@@ -85,6 +85,8 @@ validation_generator = train_datagen.flow_from_directory(
   
 ---------------------------------------------------------------------------------------------------------
 
+from tensorflow.keras.models import Model
+
 CLASSES = 4 # Output class
 x = base_model.output
 x = tf.keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
