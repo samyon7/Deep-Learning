@@ -1,6 +1,6 @@
 # Standard model (NVIDIA Tesla P100 PCIE)
 # Makin banyak Conv2D yang 128 biji, makin bagus dia + pasangannya ke mobilenet.preprocess_input
-model2 = tf.keras.models.Sequential([ 
+model = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
     tf.keras.layers.MaxPooling2D(2, 2), 
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
