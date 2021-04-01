@@ -87,9 +87,9 @@ validation_generator = train_datagen.flow_from_directory(
 
 CLASSES = 4 # Output class
 x = base_model.output
-x = GlobalAveragePooling2D(name='avg_pool')(x)
-x = Dropout(0.4)(x)
-predictions = Dense(CLASSES, activation='softmax')(x)
+x = tf.keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
+x = tf.keras.layers.Dropout(0.4)(x)
+predictions = tf.keras.layers.Dense(CLASSES, activation='softmax')(x)
 model = Model(inputs=base_model.input, outputs=predictions)
 for layer in base_model.layers:
     layer.trainable = False
