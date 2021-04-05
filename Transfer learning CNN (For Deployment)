@@ -187,6 +187,9 @@ with open('model.tflite', 'wb') as f:
 ---------------------------------------------------------------------------------------------------------
 # To create confusion matrix!
 
+import numpy as np
+from sklearn.metrics import classification_report, confusion_matrix
+
 target_names = []
 for key in train_generator.class_indices:
     target_names.append(key)
@@ -199,8 +202,6 @@ testing_generator = train_datagen.flow_from_directory(
   subset='validation',
   shuffle=False             # Use this shuffle for second training to get more good accuracy. This shuffle just able only for validation set!
 )
-
-from sklearn.metrics import classification_report, confusion_matrix
 
 #Confution Matrix and Classification Report
 
