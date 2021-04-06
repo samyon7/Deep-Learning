@@ -19,7 +19,7 @@ from tensorflow.keras.optimizers import Adam
 
 ---------------------------------------------------------------------------------------------------------
 
-tf.keras.utils.get_file('dataset.zip', 'https::link')
+tf.keras.utils.get_file('dataset.zip', 'dataset_link')
 
 ---------------------------------------------------------------------------------------------------------
 
