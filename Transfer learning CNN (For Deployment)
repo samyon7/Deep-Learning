@@ -59,7 +59,7 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
-    preprocessing_function=tf.keras.applications.vgg16.preprocess_input,
+    preprocessing_function=tf.keras.applications.mobilenet.preprocess_input,
     validation_split=0.2
 )
 
