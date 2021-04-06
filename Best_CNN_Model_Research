@@ -2,7 +2,7 @@
 # Makin banyak Conv2D yang 128 biji, makin bagus dia + pasangannya ke mobilenet.preprocess_input
 model = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
     tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Conv2D(128, (3,3), activation='relu'), 
@@ -18,7 +18,7 @@ model = tf.keras.models.Sequential([
 # Standard model 2 (NVIDIA Tesla P100 PCIE)
 model = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE, IMG_SIZE, 3) ), # Standard image shape 150
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
     tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Conv2D(128, (3,3), activation='relu'), 
@@ -33,7 +33,7 @@ model = tf.keras.models.Sequential([
 
 model3 = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
     tf.keras.layers.MaxPooling2D(2,2),
@@ -53,7 +53,7 @@ model3 = tf.keras.models.Sequential([
 # To get higher val_accuracy (must long train to make val_loss decrease)
 model4 = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(16, (3,3), activation='elu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Conv2D(32, (3,3), activation='elu'), 
     tf.keras.layers.MaxPooling2D(2,2),
@@ -77,7 +77,7 @@ model4 = tf.keras.models.Sequential([
 model4 = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(16, (3,3), activation='elu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
     tf.keras.layers.LeakyReLU(alpha=(0.1)),
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Conv2D(32, (3,3), activation='elu'), 
     tf.keras.layers.LeakyReLU(alpha=(0.1)),
@@ -105,7 +105,7 @@ model4 = tf.keras.models.Sequential([
 # Best model
 model = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
     tf.keras.layers.MaxPooling2D(2,2),
@@ -124,7 +124,7 @@ model = tf.keras.models.Sequential([
 #Best model 2
 model = tf.keras.models.Sequential([ 
     tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(IMG_SIZE,IMG_SIZE, 3) ), # Standard image shape
-    tf.keras.layers.MaxPooling2D(2, 2), 
+    tf.keras.layers.MaxPooling2D(2,2), 
     tf.keras.layers.Dropout(0.1),
     tf.keras.layers.Conv2D(64, (3,3), activation='relu'), 
     tf.keras.layers.MaxPooling2D(2,2),
