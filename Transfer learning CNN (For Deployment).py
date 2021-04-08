@@ -191,7 +191,7 @@ import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 
 target_names = []
-for key in train_generator.class_indices:
+for key in akurasi_test_generator.class_indices:
     target_names.append(key)
 
 testing_generator = train_datagen.flow_from_directory(
