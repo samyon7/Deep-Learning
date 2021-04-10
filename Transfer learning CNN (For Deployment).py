@@ -68,19 +68,19 @@ train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
 IMG_SIZE = 300
 
 train_generator = train_datagen.flow_from_directory(
-  '/content/temporary',             # Source directory
-  target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
-  batch_size=32,
-  class_mode='categorical',         # Remember to change based the class
-  subset = 'training'
+    '/content/temporary',             # Source directory
+    target_size=(IMG_SIZE,IMG_SIZE),  # Resizes images
+    batch_size=32,
+    class_mode='categorical',         # Remember to change based the class
+    subset = 'training'
 )
     
 validation_generator = train_datagen.flow_from_directory(
-  '/content/temporary',
-  target_size=(IMG_SIZE,IMG_SIZE),
-  batch_size=32,
-  class_mode='categorical',
-  subset='validation'
+    '/content/temporary',
+    target_size=(IMG_SIZE,IMG_SIZE),
+    batch_size=32,
+    class_mode='categorical',
+    subset='validation'
 )
   
 #---------------------------------------------------------------------------------------------------------
