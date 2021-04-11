@@ -228,3 +228,10 @@ new_image = np.expand_dims(new_image, axis = 0)
 result = model.predict(new_image)
 result_final = np.argmax(result)
 result_final
+
+#---------------------------------------------------------------------------------------------------------
+
+# Reset if there is stack of RAM equipment
+from numba import cuda
+cuda.select_device(0)
+cuda.close()
