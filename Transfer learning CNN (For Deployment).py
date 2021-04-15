@@ -129,7 +129,7 @@ history = model.fit(
 import matplotlib.pyplot as plt
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
-plt.title('Akurasi Model')
+plt.title('Accuracy Model')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
