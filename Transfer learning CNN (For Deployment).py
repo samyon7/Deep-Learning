@@ -163,6 +163,14 @@ print("test loss, test acc:", results)
 model.save("Model_Name.h5")
 
 #---------------------------------------------------------------------------------------------------------
+# For load model!
+#---------------------------------------------------------------------------------------------------------
+
+from keras.models import load_model
+
+model = load_model('Model_Name.h5')
+
+#---------------------------------------------------------------------------------------------------------
 # If there is no selu activation
 
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
