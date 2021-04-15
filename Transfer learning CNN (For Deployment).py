@@ -10,7 +10,6 @@ import os
 from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from tensorflow.keras.layers import Dense,GlobalAveragePooling2D,Dropout
-from tensorflow.keras.applications import VGG16
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet import preprocess_input
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -82,7 +81,9 @@ validation_generator = train_datagen.flow_from_directory(
   
 #---------------------------------------------------------------------------------------------------------
 
-base_model=VGG16(weights='imagenet',include_top=False)
+from tensorflow.keras.applications import VGG16
+
+base_model=VGG16(input_shape=(IMG_SIZE,IMG_SIZE,3),weights='imagenet',include_top=False)
 
 #---------------------------------------------------------------------------------------------------------
 
