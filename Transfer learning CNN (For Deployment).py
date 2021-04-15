@@ -30,9 +30,6 @@ zip_ref.close()
 
 #---------------------------------------------------------------------------------------------------------
 
-base_model=VGG16(weights='imagenet',include_top=False)
-
-#---------------------------------------------------------------------------------------------------------
 ########## You can use this
 import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
@@ -83,6 +80,10 @@ validation_generator = train_datagen.flow_from_directory(
     subset='validation'
 )
   
+#---------------------------------------------------------------------------------------------------------
+
+base_model=VGG16(weights='imagenet',include_top=False)
+
 #---------------------------------------------------------------------------------------------------------
 
 from tensorflow.keras.models import Model
