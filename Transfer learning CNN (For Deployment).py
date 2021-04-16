@@ -61,7 +61,7 @@ train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
 
 #---------------------------------------------------------------------------------------------------------
 
-IMG_SIZE = 300
+IMG_SIZE = 300 # This's size for transfer learning, this's good 300 than 150
 
 train_generator = train_datagen.flow_from_directory(
     '/content/temporary',             # Source directory
@@ -83,7 +83,7 @@ validation_generator = train_datagen.flow_from_directory(
 
 from tensorflow.keras.applications import VGG16
 
-base_model=VGG16(input_shape=(IMG_SIZE,IMG_SIZE,3),weights='imagenet',include_top=False)
+base_model=VGG16(input_shape=(IMG_SIZE,IMG_SIZE,3),weights='imagenet',include_top=False) # Set size to (300,300,3)
 
 #---------------------------------------------------------------------------------------------------------
 
@@ -92,7 +92,8 @@ from tensorflow.keras.models import Model
 CLASSES = 4 # Output class
 x = base_model.output
 x = tf.keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
-x = tf.keras.layers.Dropout(0.4)(x)
+x = tf.keras.layers.Dropout(0.5)(x)
+x = tf.keras.layers.Dense(512, activation='relu')(x)
 predictions = tf.keras.layers.Dense(CLASSES, activation='softmax')(x)
 model = Model(inputs=base_model.input, outputs=predictions)
 for layer in base_model.layers:
