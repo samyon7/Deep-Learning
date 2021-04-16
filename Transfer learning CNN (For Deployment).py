@@ -61,7 +61,7 @@ train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
 
 #---------------------------------------------------------------------------------------------------------
 
-IMG_SIZE = 300 # This's size for transfer learning, this's good 300 than 150
+IMG_SIZE = 300 # This's size for transfer learning, this's good 300 (or upper than 220)
 
 train_generator = train_datagen.flow_from_directory(
     '/content/temporary',             # Source directory
