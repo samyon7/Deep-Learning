@@ -119,6 +119,7 @@ class myCallback(tf.keras.callbacks.Callback):
 callbacks = myCallback()
 
 #---------------------------------------------------------------------------------------------------------
+
 %%time
 history = model.fit(
     train_generator,
