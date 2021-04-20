@@ -32,6 +32,11 @@ df.dropna()
 
 -------------------------------------------------------------------------------------------------------
 
+# Drop the duplicates value in TITLE column
+df = df.drop_duplicates(subset=['TITLE'])
+
+-------------------------------------------------------------------------------------------------------
+
 # Left side to total of classes, right side to all data that included into the classes before
 df.CATEGORY.value_counts()
 
