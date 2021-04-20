@@ -22,6 +22,16 @@ df=df[['CATEGORY','TITLE']]
 
 -------------------------------------------------------------------------------------------------------
 
+# Check the NaN value
+df['TITLE'].isnull().values.any()
+
+-------------------------------------------------------------------------------------------------------
+
+# Drop the NaN value
+df.dropna()
+
+-------------------------------------------------------------------------------------------------------
+
 # Left side to total of classes, right side to all data that included into the classes before
 df.CATEGORY.value_counts()
 
