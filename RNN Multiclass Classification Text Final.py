@@ -30,6 +30,9 @@ df['TITLE'].isnull().values.any()
 # Drop the NaN value
 df.dropna()
 
+# Or this
+df = df[pd.notnull(df['TITLE'])]
+
 -------------------------------------------------------------------------------------------------------
 
 # Drop the duplicates value in TITLE column
