@@ -211,7 +211,6 @@ testing_generator = train_datagen.flow_from_directory(
   target_size=(IMG_SIZE,IMG_SIZE),
   batch_size=32,
   class_mode='categorical',
-  subset='validation',
   shuffle=False             # Use this shuffle for second training to get more good accuracy. This shuffle just able only for validation set!
 )
 
