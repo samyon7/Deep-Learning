@@ -243,6 +243,12 @@ result_final
 #---------------------------------------------------------------------------------------------------------
 
 # Reset if there is stack of RAM equipment
+from keras import backend as K
 from numba import cuda
+
+K.clear_session()
+del model
+del history
+
 cuda.select_device(0)
 cuda.close()
