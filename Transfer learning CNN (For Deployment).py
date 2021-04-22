@@ -240,6 +240,40 @@ result = model.predict(new_image)
 result_final = np.argmax(result)
 result_final
 
+################################################
+# Or you can use this if the training is not like the regular, like using sparse categorical, 
+# that's very different technique than regular (categorical cros..)
+################################################
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import PIL
+import tensorflow as tf
+import requests
+import io
+
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.models import Sequential
+
+import cv2
+from PIL import Image, ImageOps
+import numpy as np 
+
+def import_and_predict(image_data, model):
+    size = (IMG_SIZE,IMG_SIZE) # Based Target Size that trained before
+    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+    img = np.asarray(image)
+    img_reshape = img[np.newaxis,...]
+    prediction = model.predict(img_reshape)
+    return prediction
+
+image = Image.open('../input/african-wildlife/buffalo/002.jpg')
+predictions = import_and_predict(image, model)
+class_names=['NAME_CLASS_1', 'NAME_CLASS_2','NAME_CLASS_3','NAME_CLASS_4','NAME_CLASS_N'] # Look how many your class here!
+string="This image most likely is: "+class_names[np.argmax(predictions)]
+print(string)
+
 #---------------------------------------------------------------------------------------------------------
 
 # Reset if there is stack of RAM equipment
