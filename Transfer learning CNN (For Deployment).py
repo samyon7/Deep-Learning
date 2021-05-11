@@ -235,7 +235,7 @@ new_image
 
 new_image = image.img_to_array(new_image)
 new_image = np.expand_dims(new_image, axis = 0)
-
+new_image = tf.keras.applications.mobilenet.preprocess_input(new_image)
 result = model.predict(new_image)
 result_final = np.argmax(result)
 result_final
@@ -265,6 +265,7 @@ def import_and_predict(image_data, model):
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
     img = np.asarray(image)
     img_reshape = img[np.newaxis,...]
+    img_reshape = tf.keras.applications.mobilenet.preprocess_input(img_reshape)
     prediction = model.predict(img_reshape)
     return prediction
 
