@@ -29,6 +29,10 @@ zip_ref.close()
 
 #---------------------------------------------------------------------------------------------------------
 
+
+
+#---------------------------------------------------------------------------------------------------------
+
 ########## You can use this
 import tensorflow as tf
 from tensorflow.keras.optimizers import RMSprop
@@ -274,6 +278,14 @@ predictions = import_and_predict(image, model)
 class_names=['NAME_CLASS_1', 'NAME_CLASS_2','NAME_CLASS_3','NAME_CLASS_4','NAME_CLASS_N'] # Look how many your class here!
 string="This image most likely is: "+class_names[np.argmax(predictions)]
 print(string)
+
+#---------------------------------------------------------------------------------------------------------
+
+# Sometimes you need a cgrayscale conversion so it can be better predicted by pretrained model
+import cv2
+image = cv2.imread('/content/drive/MyDrive/Salinan Sel Darah 3/EOSINOPHIL/EOSINOPHIL_EOSINOPHIL_EOSINOPHIL_EOSINOPHIL__0_1169.jpeg')
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imwrite('/content/converted.png', gray) # Then use this image for prediction!
 
 #---------------------------------------------------------------------------------------------------------
 
