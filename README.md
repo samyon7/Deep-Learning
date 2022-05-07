@@ -5,5 +5,5 @@
 <br>
 <b>Initial Commit</b> use!<br>
 <b>Commit</b> use!<br>
-<b>Update . . .</b> /use!<br>
+<b>Update . . .</b> use!<br>
 <br>
